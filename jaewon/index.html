@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>회원가입</title>
+    <script type="text/javascript" src="./lib/bignumber.min.js"></script>
+    <script type="text/javascript" src="./lib/web3-light.js"></script>
+    <script type="text/javascript" src="./lib/qrcode.js"></script>
+  </head>
+  <body>
+    <div><b>아이디:</b><input placeholder="ID" id="id" value="1" /></div>
+    <div>
+      <b>비밀 번호:</b><input placeholder="PW" id="pw" value="123456" />
+    </div>
+    <div>
+      <b>비밀번호 재확인:</b><input placeholder="PW" id="rePW" value="123456" />
+    </div>
+    <div>
+      <b>이메일:</b
+      ><input placeholder="email" id="email" value="gyuu6@daum.net" />
+    </div>
+    <button id="signUp">회원 가입</button>
+    <div id="account"></div>
+    <div id="qrcode"></div>
+    <table style="width:100%" id="table"></table>
+  </body>
+  <script src="./signUp.js"></script>
+</html>
