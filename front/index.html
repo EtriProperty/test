@@ -13,26 +13,30 @@
         <input type="email" id="loginId" name="loginId" placeholder="ID" />
         <label for="loginPw" class="screen_oout">password</label>
         <input type="password" id="loginpsw" name="loginpsw" placeholder="PW" />
-        <button type="submit" class="btn_login" disabled>Login</button>
-        <button type="submit" class="btn_register" disabled>Register</button>
+        <button type="submit" class="btn_login" disabled>로그인</button>
+        <button type="submit" class="btn_register" disabled>회원가입</button>
       </span>
     </form>
     <br /><br /><br />
     <form>
       <span style="float:right">
         <button type="submit" class="btn_roomregister" disabled>
-          Room Register
+          방 등록
         </button>
       </span>
     </form>
     <img src="img/logo.jpg" width="200" height="150" />
     <br />
-    <select style="width:200px;height:200px;" name="지역 선택" size="5">
-      <option value="" selected></option>
-      <option value="1215">관악구</option>
-      <option value="1216">강남구</option>
-      <br />
-    </select>
+    <div id="select_box">
+      <label for="color">지역을 선택해주세요.</label>
+      <select id="color" title="select area">
+        <option selected="selected">지역목록</option>
+        <option>관악구</option>
+        <option>강남구</option>
+        <option>금천구</option>
+        <option>동작구</option>
+      </select>
+    </div>
     <center>
       <table>
         <thead>
