@@ -1,7 +1,7 @@
 {
   "name": "test",
   "version": "1.0.0",
-  "description": "다시 다시 다시 테스트 테스트",
+  "description": "test",
   "main": "index.js",
   "scripts": {
     "start": "node index"
