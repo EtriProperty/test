@@ -4,6 +4,7 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan"); // 요청에 대한 로그들에 대한 정보를 기록해주기 위해
+var session = require("express-session"); // session 테스트로 인한 모듈 추가
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
@@ -28,9 +29,25 @@ app.use(
   express.urlencoded({ extended: false }),
   cookieParser()
 );
+//static 경로 설정은 morgan을 제외하면 영향을 끼치지 않는 구조여서 다른 미들웨어를 거치는게 낭비라서 위로올림
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
+
+//express-session test
+
+app.use(cookieParser("test secret"));
+app.use(
+  session({
+    resave: false,
+    saveUninitialized: false,
+    secret: "test secret",
+    cookie: {
+      httpOnly: true,
+      secure: false
+    }
+  })
+);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
