@@ -1,17 +1,28 @@
-const mysql = require("mysql");
-const connection = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "root1234",
-  port: 3306,
-  database: "my_db"
+const express = require("express");
+const app = express();
+
+app.get("/", (req, res) => {
+  res.send("hello");
 });
 
-connection.connect();
-
-connection.query("SELECT * from Persons", function(err, rows, fields) {
-  if (!err) console.log("The solution is : ", rows);
-  else console.log("Error", err);
+app.listen(3000, () => {
+  console.log("example");
 });
 
-connection.end();
+// const mysql = require("mysql");
+// const connection = mysql.createConnection({
+//   host: "localhost",
+//   user: "root",
+//   password: "root1234",
+//   port: 3306,
+//   database: "my_db"
+// });
+
+// connection.connect();
+
+// connection.query("SELECT * from Persons", function(err, rows, fields) {
+//   if (!err) console.log("The solution is : ", rows);
+//   else console.log("Error", err);
+// });
+
+// connection.end();
