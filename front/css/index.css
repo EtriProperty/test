@@ -1,0 +1,21 @@
+header {
+  height: 200px;
+  /* background-color: red; */
+}
+
+main {
+  height: 200px;
+  /* background-color: yellowgreen; */
+  display: flex;
+}
+.main-box1 {
+  height: 200px;
+  width: 20%;
+  /* background-color: red; */
+}
+
+.main-box2 {
+  height: 200px;
+  width: 80%;
+  /* background-color: yellowgreen; */
+}
