@@ -6,6 +6,7 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan"); // 요청에 대한 로그들에 대한 정보를 기록해주기 위해
 var session = require("express-session"); // session 테스트로 인한 모듈 추가
 
+//routing
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 
