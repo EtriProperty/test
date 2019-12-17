@@ -63,18 +63,12 @@ main {
   height: 200px;
   width: 50%;
   position: absolute;
-  top: 50%;
-  left: 30%;
+  top: 30%;
+  left: 50%;
   transform: translate(-50%, -50%);
   /* background-color: yellowgreen; */
 }
 
-.main-box1-contents {
-  height: 200px;
-  width: 50%;
-  position: absolute;
-  top: 50%;
-  left: 70%;
-  transform: translate(-50%, -50%);
-  /* background-color: yellowgreen; */
+.btn {
+  text-align: center;
 }
