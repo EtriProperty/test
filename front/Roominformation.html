@@ -3,20 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="css/style_roominformation.css" />
-    <title>메타마스크소유자만이용가능</title>
   </head>
   <body>
     <header>
-      <img src="img/logo.jpg" width="200" height="150" id="logo" />
-      <div class="id-box" id="select_box">
-        <label for="loginId" class="screen_out">ID</label>
-        <input type="email" id="loginId" name="loginId" placeholder="ID" />
-        <label for="loginPw" class="screen_oout">password</label>
-        <input type="password" id="loginpsw" name="loginpsw" placeholder="PW" />
-        <button type="submit" class="btn_login" disabled>로그인</button>
-        <button type="submit" class="btn_register" disabled>회원가입</button>
+      <div class="logo">
+        <img src="img/logo.jpg" width="200" height="150" id="logo" />
       </div>
-    </header>
+    <div class="title">
+      <h2>매물정보</h2>
+    </div>
+
     <main>
       <div class="main-box1">
         <table>
@@ -54,5 +50,61 @@
         </div>
       </div>
     </main>
+
+    <main2>
+      <div class="main-box2">
+        <table>
+          <tr>
+            <td>
+              <img src="img/map.jpg" width="400" height="400" />
+              <!-- <image src="#" alt="test" /> -->
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+              주변시설 관악초50M 도보 5분 <br />
+              관악마켓 10M 도보 2분 <br />
+              버스정류장 100M 도보 10분 <br />
+              지하철 119M 도보 15분<br />
+            </td>
+          </tr>
+        </table>
+      </div>
+    </main2>
+    <main3>
+    <div class="main-box3">
+      <br>
+      <br><br>
+      <br><br><br>
+      <br>
+   <td> <h3>후기를 적어주세요.</h3>
+   <td></td> <textarea cols="10"  style="width:600px;height:100px;"
+    placeholder=" 방 본 후기를 적어주세요 " name="content" class="form-control"></textarea>
+    <br>
+    <button>후기 등록</button>
+<br>
+<br>
+<br>
+    <table class="comment">
+      <tr>
+          <th scope="row">믿음님의 후기</th>
+          <td>방이 넓고 깨끗합니다. 주인분도 친절하셔서, 마음 편하게 봤네요.
+        </td>
+      </tr>
+      <tr>
+          <th scope="row">재원님의 후기 </th>
+          <td>사진이랑 똑같아요.</td>
+      </tr>
+  </table>
+  <br>
+<br>
+<br>
+      </div>
+    </main3>
   </body>
 </html>
