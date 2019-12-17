@@ -1,58 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <link rel="stylesheet" href="css/style_roominformation.css" />
-    <title>매물정보</title>
+    <title>메타마스크소유자만이용가능</title>
   </head>
   <body>
     <header>
-      <div class="logo" id="lo_go">
-        <img src="img/logo.jpg" width="300" height="250" id="logo" />
+      <img src="img/logo.jpg" width="200" height="150" id="logo" />
+      <div class="id-box" id="select_box">
+        <label for="loginId" class="screen_out">ID</label>
+        <input type="email" id="loginId" name="loginId" placeholder="ID" />
+        <label for="loginPw" class="screen_oout">password</label>
+        <input type="password" id="loginpsw" name="loginpsw" placeholder="PW" />
+        <button type="submit" class="btn_login" disabled>로그인</button>
+        <button type="submit" class="btn_register" disabled>회원가입</button>
+        <br />
+        <br />
+        <button type="submit" class="btn_roomregister" disabled>
+          방등록
+        </button>
       </div>
     </header>
-    <br />
-    <br />
-    <br />
     <main>
-      <form name="Registerform" action="/register" method="post">
-        <table class="register-table">
+      <table class ="main-box1">
           <tr>
-            <td>이름</td>
-            <td><input type="text" name="user_name" /></td>
-          </tr>
-          <tr>
-            <td>아이디</td>
-            <td><input type="text" name="user_id" /></td>
-          </tr>
-          <tr>
-            <td>비밀번호</td>
-            <td><input type="password" name="user_pw" /></td>
-          </tr>
-          <tr>
-            <td>비밀번호 확인</td>
-            <td><input type="password" name="user_pw2" /></td>
-          </tr>
-          <tr>
-            <td>주소</td>
-            <td><input type="text" name="user_address" /></td>
-          </tr>
-          <tr>
-            <td>이메일</td>
-            <td><input type="text" name="user_email" /></td>
-          </tr>
-          <tr>
-            <td>전화번호</td>
-            <td><input type="text" name="user_pn" /></td>
-          </tr>
-          <tr>
-            <td></td>
             <td>
-              <input type="submit" name="submit" value="가입하기" />
+              <img src="img/img2.jpg" width="300" height="300" id="logo" />
             </td>
           </tr>
         </table>
-      </form>
+
+        <div class="main-box1-contents">
+          <table border="1">
+            <tr>
+              <th>Title1</th>
+              <th>Title2</th>
+            </tr>
+            <tr>
+              <td>Test11</td>
+              <td>Test12</td>
+            </tr>
+            <tr>
+              <td>Test21</td>
+              <td>Test22</td>
+            </tr>
+          </table>
+        </div>
+      </div>
     </main>
   </body>
 </html>
