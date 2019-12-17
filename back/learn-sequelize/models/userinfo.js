@@ -1,8 +1,9 @@
 module.exports = (sequelize, DataTypes) => {
+  //외부키는 등록안했음 ,1차 완료
   return sequelize.define("userinfo", {
     number: {
       type: DataTypes.INTEGER(11),
-      primarykey: true,
+      primaryKey: true,
       autoIncrement: true,
       allowNull: false,
       unique: false
@@ -32,7 +33,7 @@ module.exports = (sequelize, DataTypes) => {
       unique: false
     },
     auth: {
-      type: DataTypes.BOOLEAN(2),
+      type: DataTypes.TEXT("tiny"),
       allowNull: false
     },
     ethAccount: {
