@@ -1,0 +1,75 @@
+header {
+  /* height: 200px;
+    background-color: red; */
+}
+main {
+  /* height: 300px;
+    background-color: green; */
+}
+.container {
+  display: flex;
+}
+
+.logo-image {
+  width: 150px;
+  height: 150px;
+}
+
+.sub-menu {
+  width: 30%;
+  height: 200px;
+}
+
+.container .sub-menu li {
+  margin-bottom: 10px;
+  list-style: none;
+}
+
+.container .sub-menu .sub-menu-button {
+  width: 80%;
+  height: 30px;
+  background-color: gray;
+  color: honeydew;
+}
+
+.container .sub-menu .sub-menu-button:hover {
+  background-color: darkgray;
+}
+
+.contents-wrap {
+  width: 60%;
+  border: 1px solid gray;
+  border-radius: 7px;
+  padding: 50px;
+}
+.contents {
+  display: flex;
+}
+.contents .content {
+  display: flex;
+}
+
+.contents .content .content-info img {
+  width: 150px;
+  height: 150px;
+}
+.content-wrap-button {
+  background-color: gray;
+  color: white;
+  float: right;
+}
+
+.clearflx::after {
+  content: '';
+  clear: both;
+  display: block;
+}
+
+table {
+  width: 100%;
+}
+table,
+th,
+td {
+  border: 1px solid #bcbcbc;
+}
