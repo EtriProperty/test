@@ -1,0 +1,47 @@
+.title {
+  height: 200px;
+  width: 30%;
+  position: absolute;
+  top: 10%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+}
+
+.info_1 {
+  height: 200px;
+  width: 30%;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* background-color: yellowgreen; */
+}
+
+.info_2 {
+  height: 200px;
+  width: 30%;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* background-color: yellowgreen; */
+}
+.info_3 {
+  height: 200px;
+  width: 30%;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* background-color: yellowgreen; */
+}
+.btn {
+  height: 200px;
+  width: 30%;
+  position: absolute;
+  top: 120%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  /* background-color: yellowgreen; */
+}
