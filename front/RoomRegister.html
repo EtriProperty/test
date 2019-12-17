@@ -1,42 +1,81 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8" />
-<title>회원가입</title>
-</head>
-<body>
-        <table>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/style_roomregister.css" />
+    <title>회원가입</title>
+  </head>
+  <body>
+    <header>
+      <h1>매물등록</h1>
+    </header>
+    <br />
+    <br />
+    <br />
+    <main>
+      <div class="main-box1">
+        <form name="Registerform" action="/register" method="post">
+          <div class="main-box1-contents">
+            <img src="img/logo2.jpg" width="300" height="250" id="logo" />
+            <br /><br />
+            <input /> <button>이미지첨부하기</button>
+          </div>
+          <table class="main-box2">
             <tr>
-                <td>주소</td>
-                <td><input type="text" name="user_name" /></td>
+              <td>주소</td>
+              <td><input type="text" name="user_name" /></td>
             </tr>
             <tr>
-                <td>매물형태</td>
-                <td><input type="text" name="user_id" /></td>
+              <td>매물형태(전세/월세/매매)</td>
+              <td><input type="text" name="user_id" /></td>
             </tr>
             <tr>
-                <td>가격</td>
-                <td><input type="password" name="user_pw" /></td>
+              <td>가격(보증금/월세)</td>
+              <td><input type="number" name="user_pw" /></td>
             </tr>
             <tr>
-                <td>층수</td>
-                <td><input type="password" name="user_pw2" /></td>
+              <td>비밀번호 확인</td>
+              <td><input type="password" name="user_pw2" /></td>
             </tr>
             <tr>
-                <td>책상/의자 옵션 여부</td>
-                <td><input type="text" name="user_address" /></td>
+              <td>층수</td>
+              <td><input type="text" name="user_address" /></td>
+            </tr>
+            <tr>
+              <td>방평수</td>
+              <td><input type="text" name="user_email" /></td>
             </tr>
             <tr>
               <td>방개수</td>
-              <td><input type="text" name="user_email" /></td>
-          </tr>
-          <tr>
-            <td>전화번호</td>
-            <td><input type="text" name="user_pn" /></td>
-        </tr>
-            <input type="submit" name="submit" value="등록" />
+              <td><input type="text" name="user_pn" /></td>
             </tr>
-        </table>
-    </form>
-</body>
+            <tr>
+              <td>옵션 여부</td>
+              <td><input type="text" name="user_email" /></td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  ><input type="checkbox" name="color" value="Desk" />
+                  책상</label
+                >
+              </td>
+              <td>
+                <label
+                  ><input type="checkbox" name="color" value="Chair" />
+                  의자</label
+                >
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <input type="submit" name="submit" value="등록하기" />
+              </td>
+            </tr>
+          </table>
+        </form>
+      </div>
+    </main>
+  </body>
 </html>

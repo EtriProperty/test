@@ -1,0 +1,31 @@
+header {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+main {
+  height: 200px;
+  /* background-color: yellowgreen; */
+  display: table;
+}
+.main-box1 {
+  height: 200px;
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* background-color: red; */
+}
+
+.main-box2 {
+  height: 200px;
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* background-color: yellowgreen; */
+}
