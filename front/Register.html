@@ -1,42 +1,45 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8" />
-<title>회원가입</title>
-</head>
-<body>
-        <table>
-            <tr>
-                <td>이름</td>
-                <td><input type="text" name="user_name" /></td>
-            </tr>
-            <tr>
-                <td>아이디</td>
-                <td><input type="text" name="user_id" /></td>
-            </tr>
-            <tr>
-                <td>비밀번호</td>
-                <td><input type="password" name="user_pw" /></td>
-            </tr>
-            <tr>
-                <td>비밀번호 확인</td>
-                <td><input type="password" name="user_pw2" /></td>
-            </tr>
-            <tr>
-                <td>주소</td>
-                <td><input type="text" name="user_address" /></td>
-            </tr>
-            <tr>
-              <td>이메일</td>
-              <td><input type="text" name="user_email" /></td>
-          </tr>
-          <tr>
-            <td>전화번호</td>
-            <td><input type="text" name="user_pn" /></td>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/style_Register.css" />
+    <title>회원가입</title>
+  </head>
+  <body>
+    <form name="Registerform" action="/register" method="post">
+      <table>
+        <tr>
+          <td>이름</td>
+          <td><input type="text" name="user_name" /></td>
         </tr>
-            <input type="submit" name="submit" value="가입하기" />
-            </tr>
-        </table>
+        <tr>
+          <td>아이디</td>
+          <td><input type="text" name="user_id" /></td>
+        </tr>
+        <tr>
+          <td>비밀번호</td>
+          <td><input type="password" name="user_pw" /></td>
+        </tr>
+        <tr>
+          <td>비밀번호 확인</td>
+          <td><input type="password" name="user_pw2" /></td>
+        </tr>
+        <tr>
+          <td>주소</td>
+          <td><input type="text" name="user_address" /></td>
+        </tr>
+        <tr>
+          <td>이메일</td>
+          <td><input type="text" name="user_email" /></td>
+        </tr>
+        <tr>
+          <td>전화번호</td>
+          <td><input type="text" name="user_pn" /></td>
+        </tr>
+        <tr>
+          <input type="submit" name="submit" value="가입하기" />
+        </tr>
+      </table>
     </form>
-</body>
+  </body>
 </html>

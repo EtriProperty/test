@@ -2,12 +2,16 @@ header {
   height: 200px;
   /* background-color: red; */
 }
+.id-box {
+  text-align: right;
+}
 
 main {
   height: 200px;
   /* background-color: yellowgreen; */
   display: flex;
 }
+
 .main-box1 {
   height: 200px;
   width: 20%;
