@@ -1,0 +1,20 @@
+.logo {
+  height: 200px;
+  width: 50%;
+  position: absolute;
+  top: 30%;
+  left: 65%;
+  transform: translate(-50%, -50%);
+  /* background-color: yellowgreen; */
+}
+
+.Login-table {
+    height: 200px;
+    width: 30%;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* background-color: yellowgreen; *
+
+}
