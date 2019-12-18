@@ -263,7 +263,7 @@ img {
   height: 100%;
 }
 #aa-menu-area .main-navbar .navbar-nav li a {
-  color: #fff;
+  color: #000000;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -ms-transition: all 0.5s;
@@ -1651,7 +1651,7 @@ img {
 ====================*/
 
 #aa-property-header {
-  background-image: url('../img/property-header-bg.jpg');
+  background-image: url('../img/logo2.jpg');
   background-attachment: fixed;
   background-position: center center;
   background-size: cover;
@@ -1662,7 +1662,7 @@ img {
   width: 100%;
 }
 #aa-property-header::before {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgb(255, 253);
   bottom: 0;
   content: '';
   left: 0;
