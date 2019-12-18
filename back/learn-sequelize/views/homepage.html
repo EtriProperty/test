@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="stylesheets/style_homepage.css" />
+    <title>메타마스크소유자만이용가능</title>
+  </head>
+  <body>
+    <header>
+      <img src="images/img.jpg" width="200" height="150" id="logo" />
+      <form name="Contractfoam" action="/contract" method="post">
+      <div class="id-box" id="select_box">
+          <label for="loginId" class="screen_out">ID</label>
+          <input type="email" id="loginId" name="loginId" placeholder="ID" />
+          <label for="loginPw" class="screen_oout">password</label>
+          <input
+            type="password"
+            id="loginpsw"
+            name="loginpsw"
+            placeholder="PW"
+          />
+          <button type="submit" class="btn_login" disabled>로그인</button>
+          <button type="submit" class="btn_register" disabled>회원가입</button>
+          <br />
+          <br />
+          <button type="submit" class="btn_roomregister" disabled>
+            방등록
+          </button>
+        </foam>
+      </div>
+    </form>
+    </header>
+    <main>
+      <div class="main-box1" id="select_box">
+        <select id="color" title="select area">
+          <option selected="selected">지역을 선택해주세요.</option>
+          <option>관악구</option>
+          <option>강남구</option>
+          <option>금천구</option>
+          <option>동작구</option>
+        </select>
+      </div>
+
+      <div class="main-box2">
+        <div class="main-box2-title"></div>
+        <h3>인기매물</h3>
+        <div class="main-box2-contents">
+          <table>
+            <tr>
+              <td>
+                <img src="images/img3.jpg" width="200" height="150" />
+                <span>&nbsp</span>
+                <img src="images/img2.jpg" width="200" height="150" />
+                <img src="images/img3.jpg" width="200" height="150" />
+                <img src="images/img2.jpg" width="200" height="150" />
+                <img src="images/img3.jpg" width="200" height="150" />
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="main-box2-contents2">
+          <h3>최신매물</h3>
+          <table>
+            <tr>
+              <td>
+                <img src="images/img3.jpg" width="200" height="150" />
+                <span>&nbsp</span>
+                <img src="images/img2.jpg" width="200" height="150" />
+                <img src="images/img3.jpg" width="200" height="150" />
+                <img src="images/img2.jpg" width="200" height="150" />
+                <img src="images/img3.jpg" width="200" height="150" />
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
