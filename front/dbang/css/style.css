@@ -1651,9 +1651,9 @@ img {
 ====================*/
 
 #aa-property-header {
-  background-image: url('../img/logo2.jpg');
+  background-image: url('../img/sky.jpg');
   background-attachment: fixed;
-  background-position: center center;
+  background-position: center;
   background-size: cover;
   display: inline;
   float: left;
