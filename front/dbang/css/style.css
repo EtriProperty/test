@@ -36,6 +36,65 @@
 */
 /* BASE - Base tyles, Variables, Mixins, etc. */
 
+.info_1 {
+  height: 200px;
+  width: 50%;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* background-color: yellowgreen; */
+  border: 2px solid #444444;
+  border-collapse: collapse;
+}
+
+.info_2 {
+  height: 200px;
+  width: 50%;
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* background-color: yellowgreen; */
+  border: 2px solid #444444;
+  border-collapse: collapse;
+}
+.info_3 {
+  height: 200px;
+  width: 50%;
+  position: absolute;
+  top: 150%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* background-color: yellowgreen; */
+  border: 2px solid #444444;
+  border-collapse: collapse;
+}
+th,
+td {
+  border: 2px solid #444444;
+  padding: 20px;
+}
+
+.info_3 td {
+  width: 150px;
+}
+
+th {
+  text-align: center;
+}
+
+.btn {
+  height: 200px;
+  width: 50%;
+  position: absolute;
+  top: 190%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  /* background-color: yellowgreen; */
+}
+
 body {
   background-color: #ffffff;
   font-family: 'Open Sans', sans-serif;
@@ -1651,14 +1710,14 @@ img {
 ====================*/
 
 #aa-property-header {
-  background-image: url('../img/sky.jpg');
+  background-image: url('../img/white.jpg');
   background-attachment: fixed;
   background-position: center;
-  background-size: cover;
+  background-size: contain;
   display: inline;
   float: left;
   position: relative;
-  min-height: 400px;
+  min-height: 350px;
   width: 100%;
 }
 #aa-property-header::before {
