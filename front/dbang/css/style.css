@@ -44,7 +44,7 @@
   font-size: 20px;
   cursor: pointer;
   padding: 0.8em 1em;
-  border: 3px solid #2eccfa;
+  border: 3px solid #58acfa;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 1px 3px rgba(black, 0.2);
@@ -60,7 +60,7 @@
   font-size: 20px;
   cursor: pointer;
   padding: 0.8em 1em;
-  border: 3px solid #2eccfa;
+  border: 3px solid #58acfa;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 1px 3px rgba(black, 0.2);
@@ -148,7 +148,7 @@ th {
   font-size: 20px;
   cursor: pointer;
   padding: 0.8em 1em;
-  border: 3px solid #333;
+  border: 3px solid #58acfa;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 1px 3px rgba(black, 0.2);
