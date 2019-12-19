@@ -3,3 +3,9 @@ node_modules
 
 #package-lock.json
 package-lock.json
+
+#.env
+.env
+
+#config.json
+config/config.json
