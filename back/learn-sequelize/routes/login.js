@@ -8,7 +8,9 @@ var fs = require("fs");
 var router = express.Router();
 
 /* GET login page. */
-router.get("/login", function(req, res) {
+router.get("/", function(req, res) {
+  res.render("login.html");
+  /*
   fs.readFile("./views/login.html", function(err, data) {
     // login.html 로드
     if (err) {
@@ -18,7 +20,9 @@ router.get("/login", function(req, res) {
       res.end(data); // 로드 html response
     }
   });
+  */
 });
+
 /* 테스트 안했음
 router.post("/login_on", async function(req, res, next) {
   let body = req.body;

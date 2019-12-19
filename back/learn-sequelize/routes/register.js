@@ -3,7 +3,9 @@ var router = express.Router();
 var fs = require("fs");
 
 /* GET register page. */
-router.get("/register", function(req, res) {
+router.get("/", function(req, res) {
+  res.render("register.html");
+  /*
   fs.readFile("./views/register.html", function(err, data) {
     // register.html 로드
     if (err) {
@@ -13,6 +15,7 @@ router.get("/register", function(req, res) {
       res.end(data); // 로드 html response
     }
   });
+  */
 });
 
 module.exports = router;
