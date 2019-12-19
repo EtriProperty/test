@@ -1,12 +1,11 @@
-module.exports = (sequelize, DataTypes) => {
-  //외부키는 등록안했음, 1차 완료
-  return sequelize.define("contentinfo", {
+/* jshint indent: 2 */
+
+module.exports = function(sequelize, DataTypes) {
+  return sequelize.define('contentinfo', {
     number: {
       type: DataTypes.INTEGER(11),
-      primaryKey: true,
-      autoIncrement: true,
       allowNull: false,
-      unique: false
+      primaryKey: true
     },
     floor: {
       type: DataTypes.STRING(45),
@@ -14,51 +13,57 @@ module.exports = (sequelize, DataTypes) => {
     },
     owner_id: {
       type: DataTypes.INTEGER(11),
-      allowNull: false
+      allowNull: false,
+      references: {
+        model: 'userinfo',
+        key: 'number'
+      }
     },
-    priceDep: {
+    pricedep: {
       type: DataTypes.INTEGER(11),
-      defaultValue: null
+      allowNull: true
     },
-    priceMon: {
+    pricemon: {
       type: DataTypes.INTEGER(11),
-      defaultValue: null
+      allowNull: true
     },
     price: {
       type: DataTypes.INTEGER(11),
-      defaultValue: null
+      allowNull: true
     },
-    hTime: {
-      type: DataTypes.DATE(6),
-      defaultValue: null
+    htime: {
+      type: DataTypes.DATE,
+      allowNull: true
     },
     priceway: {
       type: DataTypes.STRING(45),
       allowNull: false
     },
-    option_desk: {
-      type: DataTypes.TEXT("tiny"),
-      defaultValue: null
+    optiondesk: {
+      type: DataTypes.TEXT,
+      allowNull: true
     },
-    option_chair: {
-      type: DataTypes.TEXT("tiny"),
-      defaultValue: null
+    optionchair: {
+      type: DataTypes.TEXT,
+      allowNull: true
     },
-    roomCount: {
+    roomcount: {
       type: DataTypes.STRING(45),
       allowNull: false
     },
-    roomSize: {
+    roomsize: {
       type: DataTypes.STRING(45),
       allowNull: false
     },
-    imgPath: {
+    imgpath: {
       type: DataTypes.STRING(45),
-      defaultValue: null
+      allowNull: true
     },
     date: {
       type: DataTypes.DATEONLY,
       allowNull: false
     }
+  }, {
+    tableName: 'contentinfo'
   });
 };

@@ -1,22 +1,33 @@
-module.exports = (sequelize, DataTypes) => {
-  //외부키는 등록안했음 ,1차 완료
-  return sequelize.define("wishilist", {
+/* jshint indent: 2 */
+
+module.exports = function(sequelize, DataTypes) {
+  return sequelize.define('wishilist', {
     id: {
       type: DataTypes.INTEGER(11),
-      primaryKey: true,
-      allowNull: false
+      allowNull: false,
+      primaryKey: true
     },
-    imgPath: {
+    imgpath: {
       type: DataTypes.STRING(45),
-      defaultValue: null
+      allowNull: true
     },
-    userId: {
+    userid: {
       type: DataTypes.INTEGER(11),
-      defaultValue: null
+      allowNull: true,
+      references: {
+        model: 'userinfo',
+        key: 'number'
+      }
     },
     homeid: {
       type: DataTypes.INTEGER(11),
-      defaultValue: null
+      allowNull: true,
+      references: {
+        model: 'contentinfo',
+        key: 'number'
+      }
     }
+  }, {
+    tableName: 'wishilist'
   });
 };

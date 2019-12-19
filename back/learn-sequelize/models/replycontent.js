@@ -1,12 +1,11 @@
-module.exports = (sequelize, DataTypes) => {
-  //외부키는 등록안했음, 1차 완료
-  return sequelize.define("replycontent", {
+/* jshint indent: 2 */
+
+module.exports = function(sequelize, DataTypes) {
+  return sequelize.define('replycontent', {
     number: {
       type: DataTypes.INTEGER(11),
-      primaryKey: true,
-      autoIncrement: true,
       allowNull: false,
-      unique: false
+      primaryKey: true
     },
     content: {
       type: DataTypes.STRING(255),
@@ -22,11 +21,13 @@ module.exports = (sequelize, DataTypes) => {
     },
     point: {
       type: DataTypes.INTEGER(11),
-      defaultValue: null
+      allowNull: true
     },
-    rTime: {
-      type: DataTypes.DATE(6),
+    rtime: {
+      type: DataTypes.DATE,
       allowNull: false
     }
+  }, {
+    tableName: 'replycontent'
   });
 };

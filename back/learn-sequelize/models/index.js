@@ -5,22 +5,28 @@ const config = require(path.join(__dirname, "..", "config", "config.json"))[
   env
 ];
 const db = {};
+
 const sequelize = new Sequelize(
   config.database,
   config.username,
   config.password,
   config
 );
+console.log(config);
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
+// 모델 라우트
 db.userinfo = require("./userinfo")(sequelize, Sequelize);
 db.contentinfo = require("./contentinfo")(sequelize, Sequelize);
 db.replycontent = require("./replycontent")(sequelize, Sequelize);
 db.wishilist = require("./wishilist")(sequelize, Sequelize);
 
+console.log("userinfo", db.userinfo);
+console.log("replycontent", db.replycontent);
 //관계정의
+/*
 db.userinfo.hasMany(db.wishilist, {
   sourceKey: "number",
   foreignKey: "userId"
@@ -50,6 +56,8 @@ db.wishilist.belongsTo(db.contentinfo, {
   targetKey: "number",
   foreignKey: "homeid"
 });
+
+*/
 
 //db 객체에 userinfo라는 모델을 담았고 접근가능
 module.exports = db;
