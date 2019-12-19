@@ -35,6 +35,14 @@
 #RESPONSIVE DESIGN
 */
 /* BASE - Base tyles, Variables, Mixins, etc. */
+.contact-title {
+  height: 200px;
+  width: 50%;
+  position: absolute;
+  top: 62%;
+  left: 65%;
+  transform: translate(-50%, -50%);
+}
 
 .info_1 {
   height: 200px;
@@ -64,6 +72,18 @@
   width: 50%;
   position: absolute;
   top: 150%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* background-color: yellowgreen; */
+  border: 2px solid #444444;
+  border-collapse: collapse;
+}
+
+.info_4 {
+  height: 200px;
+  width: 50%;
+  position: absolute;
+  top: 100%;
   left: 50%;
   transform: translate(-50%, -50%);
   /* background-color: yellowgreen; */
