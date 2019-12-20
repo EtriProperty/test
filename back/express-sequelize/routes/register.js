@@ -14,15 +14,18 @@ router.get("/", function(req, res) {
 
 router.post("/register_on", async function(req, res) {
   try {
+    let body = req.body;
     let result = await user.findAll({
       where: {
-        id: req.body.userid
+        id: body.userid
       }
     });
     if (Object.keys(result).length === 0) {
       //중복 아이디가 없을떄
-      let body = req.body;
+
       let salt = Math.round(new Date().valueOf() * Math.random()) + "";
+      console.log(salt);
+      console.log(typeof salt);
       let hashPassword = crypto
         .createHash("sha512")
         .update(body.userpassword + salt)
@@ -34,7 +37,8 @@ router.post("/register_on", async function(req, res) {
         name: body.username,
         email: body.useremail,
         phone: body.userphonenumber,
-        auth: 1
+        auth: 1,
+        salt: salt
       });
       res.redirect("/"); // 수정필요, 회원가입완료 페이지로 가야함
     } else {
@@ -42,7 +46,7 @@ router.post("/register_on", async function(req, res) {
       res.status(409).json(res.statusCode);
     }
   } catch (error) {
-    res.status(500).json({ error: error.toString() });
+    res.status(500).json(res.statusCode);
   }
 });
 
