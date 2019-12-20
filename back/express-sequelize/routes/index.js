@@ -4,6 +4,11 @@ var router = express.Router();
 
 // GET home page.
 router.get("/", async (req, res, next) => {
+  try {
+    res.render("index.html");
+  } catch (error) {
+    res.status(500).json({ error: error.toString() });
+  }
   /*
   try {
     const userinfo_ = await userModel.findAll(); //아이디 찾을떄 사용하면될듯, 전체검색
@@ -17,7 +22,6 @@ router.get("/", async (req, res, next) => {
     next(error);
   }
 */
-  res.render("homepage.html");
 });
 
 module.exports = router;
