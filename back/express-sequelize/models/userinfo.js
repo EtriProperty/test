@@ -38,6 +38,10 @@ module.exports = function(sequelize, DataTypes) {
       ethaccount: {
         type: DataTypes.STRING(100),
         allowNull: true
+      },
+      salt: {
+        type: DataTypes.STRING(100),
+        allowNull: false
       }
     },
     {
