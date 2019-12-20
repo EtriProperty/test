@@ -1,42 +1,48 @@
 //로그인 기능만(입력받은 비밀번호와 db의 비밀번호와 비교 후 넘겨줌)
-var express = require("express");
-var login = require("../models").userinfo;
-//var crypto = require("crypto");
-
-var router = express.Router();
+const express = require("express");
+const login = require("../models").userinfo;
+const crypto = require("crypto");
+const router = express.Router();
 
 /* GET login page. */
 router.get("/", function(req, res) {
-  res.render("login.html");
-});
-
-/* 테스트 안했음
-router.post("/login_on", async function(req, res, next) {
-  let body = req.body;
-  let result = await login.findOne({
-    where: {
-      email: body.email
-    }
-  });
-  let dbPassword = result.dataValues.password;
-  let inputPassword = body.password;
-  let salt = result.dataValues.salt;
-  let hashPassword = crypto
-    .createHash("sha512")
-    .update(inputPassword + salt)
-    .digest("hex");
-
-  if (dbPassword === hashPassword) {
-    console.log("비밀번호 일치");
-    res.json({
-      message: "userId",
-      result_code: 200
-    });
-    res.redirect("/index");
-  } else {
-    console.log("비밀번호 불일치");
-    res.redirect("/index");
+  try {
+    res.render("signIn.html");
+  } catch (error) {
+    res.status(500).json(res.statusCode);
   }
 });
-*/
+
+router.post("/login_on", async function(req, res) {
+  //로그인 API
+  try {
+    let body = req.body;
+    let userid = body.userid;
+    let result = await login.findOne({
+      where: {
+        id: body.userid
+      }
+    });
+    let insertpassword = crypto
+      .createHash("sha512")
+      .update(body.password + result.dataValues.salt)
+      .digest("hex");
+    if (insertpassword === result.dataValues.password) {
+      // 비밀번호 일치하는거 정상작동, json으로 데이터 넘겨주면서 redirect 하고싶음
+      //json만 전송되고 리다이렉트안됨
+      console.log("비밀번호 일치");
+      res.json({
+        message: body.userid,
+        result_code: 200
+      });
+      //res.redirect("index.html");
+    } else {
+      //비밀번호 불일치 소스 추가해야함
+      //오류코드 만들고 redirect 하고싶음
+    }
+  } catch (error) {
+    res.status(404).json(res.statusCode);
+  }
+});
+
 module.exports = router;
