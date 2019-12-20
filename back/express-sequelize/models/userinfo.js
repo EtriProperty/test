@@ -4,7 +4,7 @@ module.exports = function(sequelize, DataTypes) {
     {
       number: {
         type: DataTypes.INTEGER(11),
-        allowNull: false,
+        //allowNull: false, 주석처리안하면 값안들어감
         primaryKey: true
       },
       id: {
@@ -12,7 +12,7 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: false
       },
       password: {
-        type: DataTypes.STRING(45),
+        type: DataTypes.STRING(10000),
         allowNull: false
       },
       phone: {
