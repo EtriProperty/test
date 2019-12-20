@@ -22,10 +22,7 @@ router.post("/register_on", async function(req, res) {
     });
     if (Object.keys(result).length === 0) {
       //중복 아이디가 없을떄
-
       let salt = Math.round(new Date().valueOf() * Math.random()) + "";
-      console.log(salt);
-      console.log(typeof salt);
       let hashPassword = crypto
         .createHash("sha512")
         .update(body.userpassword + salt)
@@ -43,7 +40,12 @@ router.post("/register_on", async function(req, res) {
       res.redirect("/"); // 수정필요, 회원가입완료 페이지로 가야함
     } else {
       //아이디가 이미 있을때, 409 에러 던져줌
-      res.status(409).json(res.statusCode);
+      //원하는건 에러를 던져주면서 리다이렉트하는거, res.json 해서 메시지전송하면서 redirect하면 오류남
+      res.json({
+        message: "userid",
+        result_code: res.statusCode
+      });
+      //res.redirect("register.html");
     }
   } catch (error) {
     res.status(500).json(res.statusCode);
