@@ -19,6 +19,7 @@ app.use("/login", loginRouter); //로그인 api
 app.use("/register", registerRouter); //회원가입 api
 app.use("/", indexRouter); //메인 api
 
+sequelize.sync();
 var server = app.listen(port, function() {
   console.log("express start");
 });
