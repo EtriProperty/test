@@ -1,6 +1,12 @@
 <<!DOCTYPE html>
 <html lang="en">
   <head>
+    <style>
+      h3 {
+        text-align: center;
+        color: darkred;
+      }
+    </style>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -65,70 +71,16 @@
                     ><img src="img/logo2.jpg" width="300" height="300" />
                   </a>
                 </div>
-                <form name="registerform" action="/register" method="post">
-                  <div class="aa-single-field">
-                    <label for="id">
-                      아이디 <span class="required">*</span></label
-                    >
-                    >
-                    <input
-                      type="text"
-                      required="required"
-                      aria-required="true"
-                      value=""
-                      name="userId"
-                    />
-                  </div>
-                  <div class="aa-single-field">
-                    <label for="name"
-                      >이름 <span class="required">*</span></label
-                    >
-                    <input
-                      type="text"
-                      required="required"
-                      aria-required="true"
-                      value=""
-                      name="userName"
-                    />
-                  </div>
-                  <div class="aa-single-field">
-                    <label for="password"
-                      >비밀번호 <span class="required">*</span></label
-                    >
-                    <input type="password" name="userPassword" />
-                  </div>
-                  <div class="aa-single-field">
-                    <label for="confirm-password"
-                      >비밀번호 확인 <span class="required">*</span></label
-                    >
-                    <input type="password" name="confirmUserPassword" />
-                  </div>
-                  <div class="aa-single-field">
-                    <label for="email"
-                      >이메일 <span class="required">*</span></label
-                    >
-                    <input
-                      type="email"
-                      required="required"
-                      aria-required="true"
-                      value=""
-                      name="userEmail"
-                    />
-                  </div>
-                  <div class="aa-single-field">
-                    <label for="phone"
-                      >전화번호 <span class="required">*</span></label
-                    >
-                    <input
-                      type="text"
-                      required="required"
-                      aria-required="true"
-                      value=""
-                      name="userPhoneNumber"
-                    />
-                  </div>
+                <form name="registerdone" action="/registerDone" method="get">
+                  <h3>회원가입이 완료되었습니다!</h3>
+
                   <div class="aa-single-submit">
-                    <input type="submit" value="가입" name="submit" />
+                    <input
+                      type="submit"
+                      value="확인"
+                      name="confirm"
+                      onclick="location.href='index.html' "
+                    />
                   </div>
                 </form>
               </div>
