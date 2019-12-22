@@ -69,8 +69,8 @@
               </div>
               <div class="col-md-6 col-sm-6 col-xs-6">
                 <div class="aa-header-right">
-				  <a>name님 환영합니다!</a>
-                  <a href="signin.html" class="aa-login">로그아웃</a>
+                  <a href="register.html" class="aa-register">회원가입</a>
+                  <a href="signin.html" class="aa-login">로그인</a>
                 </div>
               </div>
             </div>
@@ -123,89 +123,88 @@
 
   <!-- Start Properties  -->
   <section id="aa-properties">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8">
-            <div class="aa-properties-content">
-              <!-- Start properties content body -->
-              <div class="aa-properties-details">
-                <div class="contents-wrap">
-                    <div class="contents">
-                      <div class="content">
-                        <div class="content-checkbox">
-                          <input type="checkbox" />
-                        </div>
-                        <div class="content-info">
-                          <img src="./img/img.jpg" alt="컨텐츠 이미지" /><br />
-                          <p>매물번호: DBH1234</p>
-                        </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="aa-properties-content">
+            <!-- start properties content head -->
+            <div class="aa-properties-content-head">              
+             
+              <div class="aa-properties-content-head-right">
+                
+                <a id="aa-grid-properties" href="#"><span class="fa fa-th"></span></a>
+                <a id="aa-list-properties" href="#"><span class="fa fa-list"></span></a>
+              </div>            
+            </div>
+            <!-- Start properties content body -->
+            <div class="aa-properties-content-body">
+              <ul class="aa-properties-nav">
+                <li>
+                  <article class="aa-properties-item">
+                    <a class="aa-properties-item-img" href="#">
+                      <img alt="img" src="img/img3.jpg">
+                    </a>
+                    <div class="aa-tag for-rent">
+                      전세
+                    </div>
+                    <div class="aa-properties-item-content">
+            
+                      <div class="aa-properties-about">
+                        <h3><a href="properties-detail.htmlc">조용한 주택가입니다.</a></h3>
+                        <p> 매물번호:DBH1234 <br />
+                          주소:서울시 금천구 독산동 100 <br />
+                          집주인 연락처:010-5-435555(클릭하면 전화가능) <br />
+                          옵션:풀옵션 <br />
+                          가격: 백만원 <br />
+                          방개수: 1개<br />
+                          방평수: 20평 <br />
+                          매물형태:전세 /월세<br /></p>                      
                       </div>
-                      <div class="content">
-                        <div class="content-checkbox">
-                          <input type="checkbox" />
-                        </div>
-                        <div class="content-info">
-                          <img src="./img/img.jpg" alt="컨텐츠 이미지" /><br />
-                          <p>매물번호: DBH1234</p>
-                        </div>
+                      <div class="aa-properties-detial">
+                        <span class="aa-price">
+                          3.5억
+                        </span>
+                        <a class="aa-secondary-btn" href="properties-detail.html">자세히 보기</a>
                       </div>
                     </div>
-                    <div class="clearfix">
-                      <button class="content-wrap-button">삭제</button>
-                    </div>
-                    <div class="clearfix">
-                        <button class="content-wrap-button"><a href="properties.html" class="aa-membershipRe">매물 추가하기</a></button>
-    
-                      </div>
-                  </div>
-              </div>
+                  </article>
+                </li>
+                
+                </ul>
+              </nav>
             </div>
           </div>
-          <!-- Start properties sidebar -->
-          <div class="col-md-4">
-            <aside class="aa-properties-sidebar">
-              <!-- Start Single properties sidebar -->
-              <div class="aa-properties-single-sidebar"></div>
-              <!-- Start Single properties sidebar -->
-              <div class="aa-properties-single-sidebar">
-                <div class="media">
-                  <div class="media-left"></div>
-                  <div class="media-body">
-                    <a href="myWishList.html" class="myWish"> <h2>장바구니</h2></a>
-                  </div>
+        </div>
+        <!-- Start properties sidebar -->
+        <div class="col-md-4">
+          <aside class="aa-properties-sidebar">
+            <!-- Start Single properties sidebar -->
+            <div class="aa-properties-single-sidebar">
+              <h3>조건 검색</h3>
+              <form action="">
+                <div class="aa-single-advance-search">
+                  <select id="" name="">
+                   <option selected="" value="0">지역구</option>
+                    <option value="1">관악구</option>
+                    <option value="2">서초구</option>
+                    <option value="3">구로구</option>
+                    <option value="4">모름구</option>
+                  </select>
                 </div>
-                <div class="media">
-                  <div class="media-left"></div>
-                  <div class="media-body">
-                    <h2>내 계약목록</h2>
-                  </div>
+              
+                <div class="aa-single-advance-search">
+                  <input type="submit" value="Search" class="aa-search-btn">
                 </div>
-                <div class="media">
-                  <div class="media-left"></div>
-                  <div class="media-body">
-                    <a href="membershipInfoRe.html" class="aa-membershipRe"> <h2>회원정보수정</h2></a>
-                  </div>
-                </div>
-
-                <div class="media">
-                  <div class="media-left"></div>
-                  <div class="media-body">
-                    <h2>종료된 계약목록</h2>
-                  </div>
-                </div>
-                <div class="media">
-                    <div class="media-left"></div>
-                    <div class="media-body">
-                      <a href="walletAddressRegister.html" class="aa-myWallet"> <h2>전자지갑</h2></a>
-                    </div>
-                    </div>
-                  </div>
-              </div>
-            </aside>
-          </div>
+              </form>
+            </div> 
+            <!-- Start Single properties sidebar -->
+      
+            </div>
+          </aside>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
   <!-- / Properties  -->
 
   <!-- Footer -->
