@@ -6,6 +6,9 @@ const indexRouter = require("./routes/index");
 const loginRouter = require("./routes/login");
 const registerRouter = require("./routes/register");
 const sequelize = require("./models").sequelize;
+const authRouter = require("./routes/auth");
+const mywishlist = require("./routes/mywishlist");
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -17,10 +20,13 @@ app.set("views", __dirname + "/views");
 
 app.use("/login", loginRouter); //로그인 api
 app.use("/register", registerRouter); //회원가입 api
+app.use("/mywishlist", mywishlist);
 app.use("/", indexRouter); //메인 api
 
 sequelize.sync();
-var server = app.listen(port, function() {
+
+console.log(req.cookieParser);
+app.listen(port, function() {
   console.log("express start");
 });
 

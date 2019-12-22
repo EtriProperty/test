@@ -4,5 +4,8 @@ node_modules
 #package-lock.json
 package-lock.json
 
-#config.json
+#config.json // DB정보
 config/config.json
+
+#jwt.js // jwt secret key
+config/jwt.js

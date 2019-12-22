@@ -1,13 +1,19 @@
-var express = require("express");
-var userModel = require("../models").userinfo;
-var router = express.Router();
+const express = require("express");
+const userModel = require("../models").userinfo;
+const router = express.Router();
+// const auth = require("./auth");
+
+// router.use("/auth", auth);
 
 // GET home page.
 router.get("/", async (req, res, next) => {
   try {
     res.render("index.html");
   } catch (error) {
-    res.status(500).json({ error: error.toString() });
+    // res.status(500).json({ error: error.toString() }); 이거 써도되는건가
+    const err = new Error("Not Found");
+    err.status = 404;
+    next(err);
   }
   /*
   try {
@@ -23,5 +29,4 @@ router.get("/", async (req, res, next) => {
   }
 */
 });
-
 module.exports = router;
