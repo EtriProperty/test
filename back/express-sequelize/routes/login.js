@@ -5,6 +5,9 @@ const crypto = require("crypto");
 const router = express.Router();
 const jwt = require("jsonwebtoken"); //default HMAC SHA256 알고리즘 사용
 const secretObj = require("../config/jwt");
+const { verifyToken } = require("./auth");
+const passport = require("passport");
+const localstrategy = require("passport-local").Strategy;
 
 /* GET login page. */
 router.get("/", function(req, res) {
@@ -44,7 +47,9 @@ router.post("/login_on", async function(req, res) {
           expiresIn: "7d"
         }
       );
-      res.cookie("user", token); //쿠키로 id와 token 전송
+      passport.use(token);
+      passport.initialize();
+      console.log(req.session.token);
       //json 으로 message는 userid, token , 상태코드 전송
       res.json({
         message: result.dataValues.id,
