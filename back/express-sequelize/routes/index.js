@@ -1,10 +1,21 @@
 const express = require("express");
 const userModel = require("../models").userinfo;
 const router = express.Router();
+var passport = require("passport"),
+  LocalStrategy = require("passport-local").Strategy;
 // const auth = require("./auth");
 
 // router.use("/auth", auth);
 
+/*
+router.get("/", function(req, res, next){
+  if(req.session.logined)
+  res.render('logout', {session: req.session})
+  else{
+    res.render("login",{session: req.session})
+  }
+})
+*/
 // GET home page.
 router.get("/", async (req, res, next) => {
   try {

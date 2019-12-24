@@ -11,8 +11,8 @@ router.get("/", function(req, res) {
     res.status(500).json({ error: error.toString() });
   }
 });
-
-router.post("/register_on", async function(req, res) {
+/*
+router.post("/register_on", async function(err, req, res) {
   try {
     let body = req.body;
     let result = await user.findAll({
@@ -50,6 +50,49 @@ router.post("/register_on", async function(req, res) {
   } catch (error) {
     res.status(500).json(res.statusCode);
   }
+});
+*/
+router.post("/register_on", (req, res, next) => {
+  passport.authenticate("register", (err, user, info) => {
+    if (err) {
+      console.log(err);
+    }
+    if (info != undefined) {
+      console.log(info.message);
+      res.send(info.message);
+    } else {
+      req.logIn(user, err => {
+        const data = {
+          id: body.userid,
+          password: hashPassword,
+          name: body.username,
+          email: body.useremail,
+          phone: body.userphonenumber,
+          auth: 1,
+          salt: salt
+        };
+        user
+          .findOne({
+            where: {
+              id: data.id
+            }
+          })
+          .then(user => {
+            user
+              .update({
+                password: hashPassword,
+                name: body.username,
+                email: body.useremail,
+                phone: body.userphonenumber
+              })
+              .then(() => {
+                console.log("user created in db");
+                res.status(200).send({ message: "user created" });
+              });
+          });
+      });
+    }
+  })(req, res, next);
 });
 
 module.exports = router;

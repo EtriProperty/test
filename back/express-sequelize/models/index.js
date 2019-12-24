@@ -1,7 +1,7 @@
-const Sequelize = require("sequelize");
+var Sequelize = require("sequelize");
 const env = process.env.NODE_ENV || "development"; // 배포시에는 confing.json에서 production으로 바꾸고 배포하면된다.
 const config = require("../config/config.json")[env];
-const db = {};
+var db = {};
 
 const sequelize = new Sequelize(
   config.database,
