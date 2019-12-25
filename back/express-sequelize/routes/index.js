@@ -1,12 +1,22 @@
 const express = require("express");
 const userModel = require("../models").userinfo;
 const router = express.Router();
-var passport = require("passport"),
-  LocalStrategy = require("passport-local").Strategy;
-// const auth = require("./auth");
+const session = require("express-session");
+const FileStore = require("session-file-store")(session);
+const passportkey = require("../config/passport");
 
-// router.use("/auth", auth);
+// router.use(
+//   session({
+//     secret: passportkey.secret,
+//     resave: false,
+//     saveUninititallized: true,
+//     store: new FileStore()
+//   })
+// );
 
+router.get("/", (req, res, next) => {
+  res.render("index.html");
+});
 /*
 router.get("/", function(req, res, next){
   if(req.session.logined)
@@ -17,16 +27,16 @@ router.get("/", function(req, res, next){
 })
 */
 // GET home page.
-router.get("/", async (req, res, next) => {
-  try {
-    res.render("index.html");
-  } catch (error) {
-    // res.status(500).json({ error: error.toString() }); 이거 써도되는건가
-    const err = new Error("Not Found");
-    err.status = 404;
-    next(err);
-  }
-  /*
+// router.get("/", async (req, res, next) => {
+//   try {
+//     res.render("index.html");
+//   } catch (error) {
+//     // res.status(500).json({ error: error.toString() }); 이거 써도되는건가
+//     const err = new Error("Not Found");
+//     err.status = 404;
+//     next(err);
+//   }
+/*
   try {
     const userinfo_ = await userModel.findAll(); //아이디 찾을떄 사용하면될듯, 전체검색
     console.log(userinfo_);
@@ -38,6 +48,7 @@ router.get("/", async (req, res, next) => {
     console.error(error);
     next(error);
   }
-*/
+
 });
+*/
 module.exports = router;

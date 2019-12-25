@@ -16,18 +16,17 @@ const FileStore = require("session-file-store")(session);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+
 app.use(
   session({
     secret: passportkey.secret,
     resave: false,
-    saveUninititallized: false,
+    saveUninititallized: true,
     store: new FileStore()
   })
 );
 
-const passport = require("passport"); //passport module add
-const LocalStrategy = require("passport-local").Strategy;
-
+/*
 passport.use(
   new LocalStrategy(
     {
@@ -37,7 +36,7 @@ passport.use(
 
     function(username, password, done) {
       console.log("LocalStrategy", username, password);
-      /*
+      
       User.findOne({ username: username }, function(err, user) {
         if (err) {
           return done(err);
@@ -50,19 +49,20 @@ passport.use(
         }
         return done(null, user);
       });
-      */
+      
     }
   )
 );
-
+*/
+/*
 app.use(passport.initialize());
 app.use(passport.session());
-
+*/
 app.use(express.static("public"));
 app.engine("html", require("ejs").renderFile);
 app.set("view engine", "ejs");
 app.set("views", __dirname + "/views");
-
+/*
 app.post(
   "/login_on",
   passport.authenticate("local", {
@@ -70,6 +70,7 @@ app.post(
     failureRedirect: "/"
   })
 );
+*/
 
 app.use("/login", loginRouter); //로그인 api
 app.use("/register", registerRouter); //회원가입 api

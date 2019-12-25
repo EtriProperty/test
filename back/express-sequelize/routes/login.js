@@ -2,7 +2,7 @@
 const express = require("express");
 const Sequelize = require("sequelize");
 const sequelize = require("../models").sequelize;
-const login = require("../models").userinfo;
+const userinfo = require("../models").userinfo;
 const crypto = require("crypto");
 const router = express.Router();
 const jwt = require("jsonwebtoken"); //default HMAC SHA256 알고리즘 사용
@@ -10,8 +10,15 @@ const jwtSecret = require("../config/jwt");
 const session = require("express-session");
 const passportkey = require("../config/passport");
 const FileStore = require("session-file-store")(session);
-const passport = require("passport"); //passport module add
-const LocalStrategy = require("passport-local").Strategy;
+
+router.use(
+  session({
+    secret: passportkey.secret,
+    resave: false,
+    saveUninititallized: true,
+    store: new FileStore()
+  })
+);
 
 // router.use(
 //   session({
@@ -33,61 +40,30 @@ const LocalStrategy = require("passport-local").Strategy;
 router.post("/login_on", async function(req, res) {
   //로그인 API
   try {
+    console.log("login_on 접속 성공"); //pass
     let body = req.body;
     let userid = body.userid;
-    console.log(login);
-    let result = await login.findOne({
+    let result = await userinfo.findOne({
       //DB에서 입력된 id와 같은 컬럼 조회
       where: {
         id: userid
       }
     });
+    //여기부터 안찍힘
+    console.log("result : " + result.dataValues.id); // pass
     let insertpassword = crypto
       .createHash("sha512")
       .update(body.password + result.dataValues.salt)
       .digest("hex");
+    console.log("입력된 패스워드 암호 성공");
+    console.log("insert password : " + insertpassword);
+    console.log("result password : " + result.dataValues.password);
     if (insertpassword === result.dataValues.password) {
-      passport.use(
-        new LocalStrategy(
-          {
-            usernameField: "userid",
-            passwordField: "password"
-          },
-
-          function(username, password, done) {
-            console.log("LocalStrategy", username, password);
-          }
-        )
-      );
+      console.log("비밀번호 일치 통과");
       // 비밀번호 일치하는거 정상작동, json으로 데이터 넘겨주면서 redirect 하고싶음
       //json만 전송되고 리다이렉트안됨
       //jwt token 생성
       /*
-      passport.use(
-        new LocalStrategy(
-          {
-            usernameField: "userid",
-            passwordField: "password"
-          }, //폼에서 가져온값들
-
-          function(username, password, done) {
-            console.log("LocalStrategy", username, password);
-            login.findOne({ username: username }, function(err, user) {
-              if (err) {
-                return done(err);
-              }
-              if (!user) {
-                return done(null, false, { message: "Incorrect username." });
-              }
-              if (!user.validPassword(password)) {
-                return done(null, false, { message: "Incorrect password." });
-              }
-              return done(null, user);
-            });
-          }
-        )
-      );
-*/
       let token = jwt.sign(
         {
           id: result.dataValues.id,
@@ -98,17 +74,19 @@ router.post("/login_on", async function(req, res) {
           expiresIn: "7d"
         }
       );
+      
 
-      // passport.use(token);
-      // passport.initialize();
-      // console.log(req.session.token);
-      //json 으로 message는 userid, token , 상태코드 전송
       res.json({
         message: result.dataValues.id,
         token: token,
         result_code: 200
       });
-      //res.redirect("index.html"); //로그인은 정상되었는데 메인페이지로 보내주고싶음
+  */
+      req.session.logined = true;
+      req.session.userid = body.userid;
+      res.status(200).json({
+        result_code: res.statusCode
+      });
     } else {
       //비밀번호 불일치 소스 추가해야함
       //오류코드 만들고 redirect 하고싶음
@@ -118,11 +96,16 @@ router.post("/login_on", async function(req, res) {
       //res.redirect("/login"); - json 보내면서 리다이렉트하면 오류남
     }
   } catch (error) {
-    console.log(error);
+    console.log("여기다");
     res.status(404).send(res.statusCode); // 여기부분 진입해도 오류남, 하고싶은게 login_on 요청시 서버에서 제대로 못받았을떄 오류보내면서 404페이지 넘겨주고싶음
   }
 });
 
+//Logout
+router.get("/logout", (req, res) => {
+  req.session.destroy();
+  res.redirect("/");
+});
 /* GET login page. */
 router.get("/", function(req, res) {
   console.log("호출완료");
