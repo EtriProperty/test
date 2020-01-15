@@ -13,3 +13,5 @@ mysql community server : 8.0.18
 * DB 정보는 dotenv 사용
   .env 파일에 DB 정보를 저장하고 DB연결시 process.env.DB_profile 이런식으로하고 process.evn.DB_profile.hostname 이런식으로
   사용
+
+-------------2020.01.15------
